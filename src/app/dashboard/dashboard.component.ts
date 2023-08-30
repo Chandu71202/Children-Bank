@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
-import { AuthService } from '../auth.service';
 import { UserService } from '../user.service';
+import { account } from '../account';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,21 +11,17 @@ import { UserService } from '../user.service';
 
 export class DashboardComponent implements OnInit {
   output: any;
-  users:any;
-  data: any;
+  users: any;
+  data: account = new account(this.accountNumberGeneration(), 0, [], sessionStorage.getItem("id") || "")
+
+  accountDetails: any;
   user_id = sessionStorage.getItem("id");
-  constructor(private accountservice: AccountService,private userservice:UserService) {}
+  constructor(private accountservice: AccountService, private userservice: UserService) { }
   ngOnInit() {
     let resp = this.userservice.getUserByid(this.user_id);
     resp.subscribe((data) => { this.users = data });
   }
 
-  accountDetails = {
-    "accountNumber": Number,
-    "balance": 0,
-    "transactions": [],
-    "id": sessionStorage.getItem("id")
-  }
 
   accountNumberGeneration() {
     let x = Math.floor((Math.random() * 100000000000) + 1);
@@ -33,12 +29,6 @@ export class DashboardComponent implements OnInit {
   }
 
   create_account() {
-    this.data = {
-      "accountNumber": this.accountNumberGeneration(),
-      "balance": 0,
-      "transactions": [],
-      "id": sessionStorage.getItem("id")
-    }
     let response = this.accountservice.addingAccount(this.data);
     response.subscribe((res: any) => this.output = res);
   }
