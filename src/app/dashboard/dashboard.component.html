@@ -1,54 +1,51 @@
 <!-- Add these lines in the <head> section -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
-<div class="dashboard-container">
-    <div class="sidebar">
-      <!-- Sidebar content, display personal details -->
-      <div class="profile">
-        <img src="assets/abc.png" alt="Profile Image">
-        <h2>John Doe</h2>
-        <p>john@example.com</p>
-      </div>
-      <!-- Other personal details -->
-      <div class="profile-details">
-        <h2>Account Number : 7600001345</h2>
-        <h2>IFSC Code : HDFC0014567</h2>
-        <h2>Branch Name : Adyar</h2>
-        <h2>Phone Number : 9170803284</h2>
-        <h2>Gender : Male</h2>
-        <h2>Date of Birth : 01/03/200</h2>
-        <h2>Address : Besant Nagar, Chennai</h2>
-      </div>
-     
-    </div>
-    <div class="main-content">
-      <h1 class="mb-4">Welcome to Your Dashboard</h1>
-      <div class="action-buttons">
-        <div class="row mb-4">
-          <div class="col text-center">
-            <button class="btn btn-primary" routerLink="/create-account">Create Account</button>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <button class="btn btn-secondary mr-2" routerLink="/withdraw">Withdraw</button>
-            <button class="btn btn-secondary" routerLink="/deposit">Deposit</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <button class="btn btn-info mr-2" routerLink="/check-balance">Check Balance</button>
-            <button class="btn btn-info mr-2" routerLink="/view-statements">View Statements</button>
-            <button class="btn btn-info" routerLink="/transfer-money">Transfer Money</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-      <router-outlet></router-outlet>
-    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  
+<div class="dashboard-container">
+  <div class="sidebar">
+    <!-- Sidebar content, display personal details -->
+    <div class="profile">
+      <img src="assets/abc.png" alt="Profile Image">
+      <h2>John Doe</h2>
+      <p>john@example.com</p>
+    </div>
+    <!-- Other personal details -->
+    <div class="profile-details">
+      <h2>Account Number : 7600001345</h2>
+      <h2>IFSC Code : HDFC0014567</h2>
+      <h2>Branch Name : Adyar</h2>
+      <h2>Phone Number : 9170803284</h2>
+      <h2>Gender : Male</h2>
+      <h2>Date of Birth : 01/03/200</h2>
+      <h2>Address : Besant Nagar, Chennai</h2>
+    </div>
+
+  </div>
+  <div class="main-content">
+    <h1 class="mb-4">Welcome to Your Dashboard</h1>
+    <div class="action-buttons">
+      <div class="row mb-4">
+        <div class="col text-center">
+          <button class="btn btn-primary" (click)="create_account()">Create Account</button>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col">
+          <button class="btn btn-secondary mr-2" routerLink="/withdraw">Withdraw</button>
+          <button class="btn btn-secondary" routerLink="/deposit">Deposit</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-info mr-2" routerLink="/check-balance">Check Balance</button>
+          <button class="btn btn-info mr-2" routerLink="/view-statements">View Statements</button>
+          <button class="btn btn-info" routerLink="/transfer-money">Transfer Money</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
