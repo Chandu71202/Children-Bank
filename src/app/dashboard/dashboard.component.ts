@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
 import { UserService } from '../user.service';
 import { account } from '../account';
+import { MatDialog } from '@angular/material/dialog';
+import { DepositComponent } from '../deposit/deposit.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   accountDetails: any;
   user_id = sessionStorage.getItem("id");
-  constructor(private accountservice: AccountService, private userservice: UserService) { }
+  constructor(private accountservice: AccountService, private userservice: UserService,private dialog: MatDialog) { }
   ngOnInit() {
     let resp = this.userservice.getUserByid(this.user_id);
     resp.subscribe((data) => { this.users = data });
@@ -26,6 +29,20 @@ export class DashboardComponent implements OnInit {
   accountNumberGeneration() {
     let x = Math.floor((Math.random() * 100000000000) + 1);
     return x;
+  }
+ 
+
+  openDeposit(): void {
+    const dialogRef = this.dialog.open(DepositComponent, {
+      width: '300px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Deposit:', result);
+        
+      }
+    });
   }
 
   create_account() {
