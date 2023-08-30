@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "json-server --watch accounts.json",
+    "watch2":"json-server -p 3500 --watch db.json",
     "test": "ng test"
   },
   "private": true,

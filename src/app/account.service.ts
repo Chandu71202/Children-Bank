@@ -13,4 +13,5 @@ export class AccountService {
   public addingAccount(data:any){
     return this.http.post(this.apiurl,data);
   }
+  
 }

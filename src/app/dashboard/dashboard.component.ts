@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-  output: any;
-  constructor(private service: AccountService) {
 
+export class DashboardComponent implements OnInit {
+  output: any;
+  users:any;
+  data: any;
+  user_id = sessionStorage.getItem("id");
+  constructor(private service: AccountService, private authservice: AuthService) {}
+  ngOnInit() {
+    let resp = this.authservice.getUserByid(this.user_id);
+    resp.subscribe((data) => { this.users = data });
   }
 
-  data: any;
   accountDetails = {
     "accountNumber": Number,
     "balance": 0,
@@ -34,6 +40,5 @@ export class DashboardComponent {
     }
     let response = this.service.addingAccount(this.data);
     response.subscribe((res: any) => this.output = res);
-
   }
 }
