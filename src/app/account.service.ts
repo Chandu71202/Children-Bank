@@ -8,10 +8,10 @@ export class AccountService {
 
   constructor(private http:HttpClient) { }
 
-  apiurl = "http://localhost:3000/accounts/"
+  accounturl = "http://localhost:3000/accounts/";
 
   public addingAccount(data:any){
-    return this.http.post(this.apiurl,data);
+    return this.http.post(this.accounturl,data);
   }
   
 }
