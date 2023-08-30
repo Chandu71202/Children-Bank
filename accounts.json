@@ -5,6 +5,12 @@
       "balance": 0,
       "transactions": [],
       "id": "123456"
+    },
+    {
+      "accountNumber": 63523409123,
+      "balance": 0,
+      "transactions": [],
+      "id": "12345"
     }
   ]
 }
