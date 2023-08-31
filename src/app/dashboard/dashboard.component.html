@@ -1,52 +1,93 @@
 <!-- Add these lines in the <head> section -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<div class="dashboard-container">
-  <div class="sidebar">
-    <!-- Sidebar content, display personal details -->
-    <div class="profile">
-      <img src="assets/abc.png" alt="Profile Image">
-      <h2>{{users.firstName}} {{users.middleName}} {{users.lastName}}</h2>
-      <p>{{users.email}}</p>
-    </div>
-    <!-- Other personal details -->
-    <div class="profile-details">
-        <h2>Name : {{users.firstName}} {{users.middleName}} {{users.lastName}}</h2>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <div class="dashboard-container">
+    <!--Approved part-->
+    <ng-template [ngIf]="Approval_Status" [ngIfElse]="notApprovedBlock">
+      <div class="sidebar">
+        <!-- Sidebar content, display personal details -->
+        <div class="profile">
+          <div class = "approved">
+            <span class="badge-approved">Approved</span>
+          </div>
+          <!--<span class="badge-approved">Approved</span>-->
+          <img src="assets/abc.png" alt="Profile Image">
+          <h2>{{users.firstName}} {{users.middleName}} {{users.lastName}}</h2>
+        <p>{{users.email}}</p>
+        </div>
+        <!-- Other personal details -->
+        <div class="profile-details">
+          <h2>Name : {{users.firstName}} {{users.middleName}} {{users.lastName}}</h2>
         <h2>Date of Birth : {{users.dateofbirth}}</h2>
         <h2>Aadhar Number : {{users.aadhar}}</h2>
         <h2>Gender : {{users.gender}}</h2>
         <h2>Branch Name : {{users.branchName}}</h2>
         <h2>Branch Code : {{users.branchCode}}</h2>
         <h2>Address : {{users.address}}</h2><br>
-        <h2>Admin Approved : {{users.isApproved}}</h2>
+        </div>
     </div>
-
+    <!--operations avalilable -->
+    <div class="main-content">
+        <h1 class="mb-4">Welcome to Your Dashboard</h1>
+        <div class="action-buttons">
+          <div class="row mb-4">
+            <div class="col text-center">
+              <button class="btn btn-primary" (click)="create_account()">Create Account</button>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col">
+              <button class="btn btn-secondary mr-2" (click)="openWithdraw()">Withdraw</button>
+              <button class="btn btn-secondary" (click)="openDeposit()">Deposit</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button class="btn btn-info mr-2" routerLink="/check-balance">Check Balance</button>
+              <button class="btn btn-info mr-2" routerLink="/view-statements">View Statements</button>
+              <button class="btn btn-info" routerLink="/transfer-money">Transfer Money</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </ng-template>
+  <!--Not approved part-->
+    <ng-template #notApprovedBlock>
+      <div class="sidebar">
+        <!-- Sidebar content, display personal details -->
+        <div class="profile">
+          <div class = "approved">
+            <span class="badge-notapproved">Not Approved</span>
+          </div>
+          <img src="assets/abc.png" alt="Profile Image">
+          <h2>{{users.firstName}} {{users.middleName}} {{users.lastName}}</h2>
+        <p>{{users.email}}</p>
+        </div>
+        <!-- Other personal details -->
+        <div class="profile-details">
+          <h2>Name : {{users.firstName}} {{users.middleName}} {{users.lastName}}</h2>
+        <h2>Date of Birth : {{users.dateofbirth}}</h2>
+        <h2>Aadhar Number : {{users.aadhar}}</h2>
+        <h2>Gender : {{users.gender}}</h2>
+        <h2>Branch Name : {{users.branchName}}</h2>
+        <h2>Branch Code : {{users.branchCode}}</h2>
+        <h2>Address : {{users.address}}</h2><br>
+        </div>
+      </div>
+      <div class="main-content">
+        <h1>Waiting for approval!</h1>
+      </div>
+    </ng-template>
   </div>
-  <div class="main-content">
-    <h1 class="mb-4">Welcome to Your Dashboard</h1>
-    <div class="action-buttons">
-      <div class="row mb-4">
-        <div class="col text-center">
-          <button class="btn btn-primary" (click)="create_account()">Create Account</button>
-        </div>
-      </div>
-      <div class="row mb-4">
-        <div class="col">
-          <button class="btn btn-secondary mr-2" (click)="openWithdraw()">Withdraw</button>
-          <button class="btn btn-secondary" mat-button (click)="openDeposit()">Deposit</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <button class="btn btn-info mr-2" routerLink="/check-balance">Check Balance</button>
-          <button class="btn btn-info mr-2" routerLink="/view-statements">View Statements</button>
-          <button class="btn btn-info" routerLink="/transfer-money">Transfer Money</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
-  <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
