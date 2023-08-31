@@ -7,6 +7,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { WithdrawpopComponent } from '../withdrawpop/withdrawpop.component';
 import { TransferComponent } from '../transfer/transfer.component';
 import { ViewstatementsComponent } from '../viewstatements/viewstatements.component';
+import { CheckBalanceComponent } from '../check-balance/check-balance.component';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -19,7 +22,7 @@ export class DashboardComponent implements OnInit {
   accountDetails: any;
   user_id = sessionStorage.getItem("id");
   Approval_Status:boolean | undefined;
-  constructor(private accountservice: AccountService, private userservice: UserService,private dialog:MatDialog) { }
+  constructor(private accountservice: AccountService, private userservice: UserService,private dialog:MatDialog,private http:HttpClient) { }
   ngOnInit() {
     let resp = this.userservice.getUserByid(this.user_id);
     resp.subscribe((res) => { this.users = res ;this.Approval_Status = this.users.isApproved;});
@@ -59,6 +62,16 @@ export class DashboardComponent implements OnInit {
     this.dialog.open(ViewstatementsComponent, {
       width: '50%',
     })
+  }
+ 
+  checkBalance(){
+    this.accountservice.getAccount(this.user_id).subscribe(data=>{
+      const balanceData = data.balance;
+      const dialogRef = this.dialog.open(CheckBalanceComponent, {
+        width: '400px',
+        data:{balance:balanceData},
+      });
+    }) 
   }
 }
 
