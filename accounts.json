@@ -8,8 +8,12 @@
     },
     {
       "accountNumber": 76703432780,
-      "balance": 0,
-      "transactions": [],
+      "balance": 53300,
+      "transactions": [
+        "Deposit Successful, you current balance is 60000",
+        "Withdraw 700 from your account",
+        "Transfer Successful, to 656565 you current balance is 53300"
+      ],
       "id": "123456"
     }
   ]

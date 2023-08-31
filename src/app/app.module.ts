@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from 'src/material.module';
 import { TransferComponent } from './transfer/transfer.component';
 import { CheckBalanceComponent } from './check-balance/check-balance.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CheckBalanceComponent } from './check-balance/check-balance.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,20 +2,18 @@
 <div mat-dialog-content>
   <table class="table table-striped custab">
     <thead>
-        <tr>
-            <th>All Transactions</th>
-        </tr>
+      <tr>
+        <th>All Transactions</th>
+      </tr>
     </thead>
     <tbody>
-      <tr *ngForOf="let transaction of account_data">
-        <td>{{transaction.accountNumber}}</td>
-        </tr>
+      <tr *ngFor="let each of account_data">
+        <td>{{ each }}</td>
+      </tr>
     </tbody>
-    </table>
+  </table>
+</div>
 
-</div>
- 
 <div mat-dialog-actions>
-    <button mat-button (click)="viewStatements()">Done</button>
+  <button mat-button mat-dialog-close (click)="closeBtn()">Close</button>
 </div>
-  
