@@ -1,13 +1,12 @@
 <!-- deposit-popup.component.html -->
 
 <mat-dialog-content>
-    <h2>Deposit Amount</h2>
-    <mat-form-field>
-      <input matInput type="number" [(ngModel)]="depositAmount" placeholder="Enter amount" />
-    </mat-form-field>
-  </mat-dialog-content>
-  <mat-dialog-actions>
-    <button mat-button (click)="deposit()">Deposit</button>
-    <button mat-button mat-dialog-close>Cancel</button>
-  </mat-dialog-actions>
-  
+  <h2>Deposit Amount</h2>
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="depositAmount" placeholder="Enter Amount" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="deposit()">Deposit</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
