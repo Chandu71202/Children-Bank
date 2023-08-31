@@ -1,0 +1,22 @@
+
+<h1 mat-dialog-title>Transfer</h1>
+<div mat-dialog-content>
+    <form [formGroup]="transferForm">
+        <mat-form-field>
+            <mat-label>Sender account no:</mat-label>
+            <input matInput  formControlName="sender_account_number" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Receiver account no:</mat-label>
+            <input matInput  formControlName="receiver_account_number" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Amount:</mat-label>
+            <input matInput  formControlName="amount" required>
+          </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Done</button>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>

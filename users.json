@@ -15,7 +15,7 @@
         "address": "GANAPAVARAM RAJUPALEM MANDAL GUNTUR DISTRICT AP",
         "branchName": "guntur",
         "branchCode": "111222",
-        "isApproved": false,
+        "isApproved": true,
         "password": "Chandra@123",
         "confirmPassword": "Chandra@123",
         "id": "12345"
