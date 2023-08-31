@@ -1,16 +1,16 @@
 {
   "accounts": [
     {
-      "accountNumber": 41275644741,
-      "balance": 2000,
-      "transactions": [],
-      "id": "123456"
-    },
-    {
       "accountNumber": 63523409123,
       "balance": 6924,
       "transactions": [],
       "id": "12345"
+    },
+    {
+      "accountNumber": 76703432780,
+      "balance": 0,
+      "transactions": [],
+      "id": "123456"
     }
   ]
 }

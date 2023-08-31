@@ -40,4 +40,4 @@ import { CheckBalanceComponent } from './check-balance/check-balance.component';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-sessionStorage.setItem('id', '12345');
+sessionStorage.setItem('id', '123456');
