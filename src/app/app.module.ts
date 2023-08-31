@@ -36,7 +36,7 @@ import { CommonModule } from '@angular/common';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularMaterialModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
