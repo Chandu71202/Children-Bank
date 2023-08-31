@@ -16,6 +16,7 @@ export class DepositComponent implements OnInit {
   result: any;
   user_id = sessionStorage.getItem('id');
 
+  // Deposit function which works on clicking the deposit button 
   deposit(): void {
     this.accountservice.getAccount(this.user_id).subscribe((res) => {
       this.account = res;
@@ -28,6 +29,12 @@ export class DepositComponent implements OnInit {
         .subscribe(response => {
           this.result = response;
           alert(`Deposit Successful, you current balance is ${this.result.balance}`);
+          // To save the transaction in the transaction array
+          const transaction_msg = `Deposit Successful, you current balance is ${this.result.balance}`;
+          this.account.transactions.push(transaction_msg);
+          this.accountservice.updateTransaction(this.user_id, this.account.transactions).subscribe((res) => {
+            this.result = res;
+          });
         });
     });
     this.dialogRef.close();

@@ -20,9 +20,11 @@ export class TransferComponent implements OnInit{
   result: any;
 
   ngOnInit() { 
+    //  to auto fill the sender's account number since it is the same individual
     this.accountservice.getAccount(this.user_id).subscribe((res) => {this.sender_account_number=res.accountNumber});
   }
 
+  //  Transfer Amount Function that works on submitting the transfer button
   transfer_amount(): void {
     this.accountservice.getAccount(this.user_id).subscribe((res) => {
       this.account = res;
@@ -35,6 +37,12 @@ export class TransferComponent implements OnInit{
         .subscribe(response => {
           this.result = response;
           alert(`Transfer Successful, to ${this.receiver_account_number} you current balance is ${this.result.balance}`);
+          // transaction message to add in the transaction array
+          const transaction_msg = `Transfer Successful, to ${this.receiver_account_number} you current balance is ${this.result.balance}`;
+          this.account.transactions.push(transaction_msg);
+          this.accountservice.updateTransaction(this.user_id, this.account.transactions).subscribe((res) => {
+            this.result = res;
+          });
         });
     });
     this.dialogRef.close();
