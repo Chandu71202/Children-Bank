@@ -13,13 +13,15 @@ import { WithdrawpopComponent } from './withdrawpop/withdrawpop.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from 'src/material.module';
+import { TransferComponent } from './transfer/transfer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     DepositComponent,
-    WithdrawpopComponent
+    WithdrawpopComponent,
+    TransferComponent
   ],
   imports: [
     BrowserModule,
