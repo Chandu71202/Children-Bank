@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
 import { UserService } from '../user.service';
 import { account } from '../account';
-import { MatDialog } from '@angular/material/dialog';
+
 import { DepositComponent } from '../deposit/deposit.component';
 
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { WithdrawpopComponent } from '../withdrawpop/withdrawpop.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   accountDetails: any;
   user_id = sessionStorage.getItem("id");
-  constructor(private accountservice: AccountService, private userservice: UserService,private dialog: MatDialog) { }
+  constructor(private accountservice: AccountService, private userservice: UserService,private dialog:MatDialog) { }
   ngOnInit() {
     let resp = this.userservice.getUserByid(this.user_id);
     resp.subscribe((data) => { this.users = data });
@@ -48,5 +50,13 @@ export class DashboardComponent implements OnInit {
   create_account() {
     let response = this.accountservice.addingAccount(this.data);
     response.subscribe((res: any) => this.output = res);
+  }
+
+  openWithdraw(){
+    const dialogRef = this.dialog.open(WithdrawpopComponent, {
+      width: '400px',
+      data: {  },
+    });
+    
   }
 }
