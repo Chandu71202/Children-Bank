@@ -9,12 +9,17 @@ import { DepositComponent } from './deposit/deposit.component';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WithdrawpopComponent } from './withdrawpop/withdrawpop.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    DepositComponent
+    DepositComponent,
+    WithdrawpopComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
