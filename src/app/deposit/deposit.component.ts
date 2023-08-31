@@ -36,7 +36,8 @@ export class DepositComponent implements OnInit {
             `Deposit Successful, you current balance is ${this.result.balance}`,
           );
           // To save the transaction in the transaction array
-          const transaction_msg = `Deposit Successful, you current balance is ${this.result.balance}`;
+          const date = new Date();
+          const transaction_msg = `Deposit Successful, you current balance is ${this.result.balance} at ${date}`;
           this.account.transactions.push(transaction_msg);
           this.accountservice
             .updateTransaction(this.user_id, this.account.transactions)

@@ -3,11 +3,17 @@
   <table class="table table-striped custab">
     <thead>
       <tr>
-        <th>All Transactions</th>
+        <th>
+          {{
+            account_data.length == 0
+              ? "Perform some action, to view your Account Statement"
+              : "All Transactions"
+          }}
+        </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let each of account_data">
+      <tr *ngFor="let each of account_data.reverse()">
         <td>{{ each }}</td>
       </tr>
     </tbody>

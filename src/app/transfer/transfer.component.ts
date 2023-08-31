@@ -48,7 +48,8 @@ export class TransferComponent implements OnInit {
             `Transfer Successful, to ${this.receiver_account_number} you current balance is ${this.result.balance}`,
           );
           // transaction message to add in the transaction array
-          const transaction_msg = `Transfer Successful, to ${this.receiver_account_number} you current balance is ${this.result.balance}`;
+          const date = new Date();
+          const transaction_msg = `Transfer Successful, to ${this.receiver_account_number} you current balance is ${this.result.balance} at ${date}`;
           this.account.transactions.push(transaction_msg);
           this.accountservice
             .updateTransaction(this.user_id, this.account.transactions)

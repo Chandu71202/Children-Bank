@@ -51,7 +51,8 @@ export class WithdrawpopComponent implements OnInit {
             `Withdraw Successful, you current balance is ${this.result.balance}`,
           );
           // transaction message to add in the transaction array
-          const transaction_msg = `Withdraw ${this.withdrawAmount} from your account`;
+          const date = new Date();
+          const transaction_msg = `Withdraw ${this.withdrawAmount} from your account  at ${date}`;
           this.account.transactions.push(transaction_msg);
           this.accountservice
             .updateTransaction(this.user_id, this.account.transactions)
