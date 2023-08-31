@@ -8,10 +8,10 @@ export const authGuard: CanActivateFn = () => {
 
   // this checks both isLoggedIn variable and the sessionstorage value contains the ID
   // Note: As of now, I'll be using || instead of &&
-  if (authService.isLoggedInOrNot() && sessionStorage.getItem("id")) {
+  if (authService.isLoggedInOrNot() && sessionStorage.getItem('id')) {
     return true;
   }
 
   // else it pushes the user back to homepage
-  return router.parseUrl('')
+  return router.parseUrl('');
 };

@@ -2,14 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AccountService {
-
-  constructor(private http: HttpClient) { }
-  accounturl = "http://localhost:3000/accounts/";
+  constructor(private http: HttpClient) {}
+  accounturl = 'http://localhost:3000/accounts/';
 
   // Creating a new account to the user
   public addingAccount(data: any) {
@@ -27,10 +25,14 @@ export class AccountService {
   }
 
   // To add all the transactions into the transaction array
-  updateTransaction(id: any, new_transaction: any){
-    return this.http.patch(this.accounturl + `${id}`, {transactions:new_transaction});
+  updateTransaction(id: any, new_transaction: any) {
+    return this.http.patch(this.accounturl + `${id}`, {
+      transactions: new_transaction,
+    });
   }
-  
 
+  // To get all the accounts
+  getAllAccounts() {
+    return this.http.get(this.accounturl);
+  }
 }
-

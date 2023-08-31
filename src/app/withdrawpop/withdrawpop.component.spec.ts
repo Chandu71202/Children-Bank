@@ -8,7 +8,7 @@ describe('WithdrawpopComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WithdrawpopComponent]
+      declarations: [WithdrawpopComponent],
     });
     fixture = TestBed.createComponent(WithdrawpopComponent);
     component = fixture.componentInstance;

@@ -7,11 +7,15 @@ import { authGuard } from './auth/auth.guard';
 const routes: Routes = [
   { path: '', component: AppComponent },
   // the below route is protected and private only for the successfully logged in user
-  { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] }
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

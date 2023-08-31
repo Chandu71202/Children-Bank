@@ -1,24 +1,24 @@
 {
-    "users":[
+  "users": [
     {
-        "firstName": "CHANDRA",
-        "middleName": "SURYA",
-        "lastName": "PRAKASH",
-        "relationship": "father",
-        "RelationshipPersonsName": "aa",
-        "RelationshipPersonsOccupation": "aaa",
-        "RelationshipPersonsMobileNumber": "1234",
-        "email": "abc@gmail.com",
-        "dateofbirth": "09/09/2001",
-        "aadhar": "1234567890",
-        "gender": "male",
-        "address": "GANAPAVARAM RAJUPALEM MANDAL GUNTUR DISTRICT AP",
-        "branchName": "guntur",
-        "branchCode": "111222",
-        "isApproved": true,
-        "password": "Chandra@123",
-        "confirmPassword": "Chandra@123",
-        "id": "12345"
-      }
-    ]
+      "firstName": "CHANDRA",
+      "middleName": "SURYA",
+      "lastName": "PRAKASH",
+      "relationship": "father",
+      "RelationshipPersonsName": "aa",
+      "RelationshipPersonsOccupation": "aaa",
+      "RelationshipPersonsMobileNumber": "1234",
+      "email": "abc@gmail.com",
+      "dateofbirth": "09/09/2001",
+      "aadhar": "1234567890",
+      "gender": "male",
+      "address": "GANAPAVARAM RAJUPALEM MANDAL GUNTUR DISTRICT AP",
+      "branchName": "guntur",
+      "branchCode": "111222",
+      "isApproved": true,
+      "password": "Chandra@123",
+      "confirmPassword": "Chandra@123",
+      "id": "12345"
+    }
+  ]
 }

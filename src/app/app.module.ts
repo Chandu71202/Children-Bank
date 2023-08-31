@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DepositComponent } from './deposit/deposit.component';
 import { FormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WithdrawpopComponent } from './withdrawpop/withdrawpop.component';
 
@@ -23,7 +23,7 @@ import { CheckBalanceComponent } from './check-balance/check-balance.component';
     DepositComponent,
     WithdrawpopComponent,
     TransferComponent,
-    CheckBalanceComponent
+    CheckBalanceComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,11 +34,10 @@ import { CheckBalanceComponent } from './check-balance/check-balance.component';
     MatFormFieldModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-sessionStorage.setItem('id', "12345");
-
+export class AppModule {}
+sessionStorage.setItem('id', '12345');
