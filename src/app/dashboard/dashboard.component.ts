@@ -6,6 +6,7 @@ import { DepositComponent } from '../deposit/deposit.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { WithdrawpopComponent } from '../withdrawpop/withdrawpop.component';
 import { TransferComponent } from '../transfer/transfer.component';
+import { ViewstatementsComponent } from '../viewstatements/viewstatements.component';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -51,9 +52,16 @@ export class DashboardComponent implements OnInit {
   openTransfer(){
     this.dialog.open(TransferComponent, {
       width: '50%',
+    });
+    
+  }
+  openviewstatements(){
+    this.dialog.open(ViewstatementsComponent, {
+      width: '50%',
     })
   }
 }
+
 
 
 
