@@ -14,6 +14,7 @@ import { WithdrawpopComponent } from './withdrawpop/withdrawpop.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from 'src/material.module';
 import { TransferComponent } from './transfer/transfer.component';
+import { CheckBalanceComponent } from './check-balance/check-balance.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TransferComponent } from './transfer/transfer.component';
     DashboardComponent,
     DepositComponent,
     WithdrawpopComponent,
-    TransferComponent
+    TransferComponent,
+    CheckBalanceComponent
   ],
   imports: [
     BrowserModule,
